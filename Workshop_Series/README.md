@@ -1,21 +1,25 @@
-# Android Examples
+# Android Workshop Series
+Welcome to my very own workshop!! A series of tutorials to allow people to quickly understand and begin developing with the android sdk (in java). 
 
-## Android Workshop Series
+    Always a work in progress.... 
 
-# Series 1 - Hello, Android
-An introduction into the absolute basics of the android system
+## Series 1 - Hello, Android
+An absolute introduction in the android system, from the tools (logcat and DDMS) to developing layouts using basic xml. 
 
-# Series 2 - Better UI
-Making better UI with ActionBars, Fragements and RelativeLayouts
+## Series 2 - Better UI
+After the basics, some more advanced UI development features. Focused on _ActionBars_, _Fragements_ and _RelativeLayouts_. 
 
-# Series 3 - Multitasking
-Interact with the system by Services, Broadcasts and Intents
+## Series 3 - Multitasking
+Interacting with the system is important for any application and in this series we delve deeper into how applications listen and interact with events across the system. 
 
-# Series 4 - Storing Data
-Persis the data across sessions with database and preferences. 
+## Series 4 - Storing Data
+Store and persist data, cache data and understand how data can be retreived. 
 
 
-## Past Android Project/s
+## Exercise Projects
+Test your android development skills with some basic project ideas! 
+
+    Check the individual project folders, for hints on how to implement the application. 
 
 
 
