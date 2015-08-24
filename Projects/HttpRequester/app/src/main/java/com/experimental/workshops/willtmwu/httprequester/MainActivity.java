@@ -1,16 +1,47 @@
 package com.experimental.workshops.willtmwu.httprequester;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+
+    private EditText editTextWebsite;
+    private TextView responseView;
+    private Button refreshButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        editTextWebsite = (EditText) findViewById(R.id.editText);
+        responseView = (TextView) findViewById(R.id.textView);
+        refreshButton = (Button) findViewById(R.id.button);
+
+
+
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Make an web request, set it to the textView
+
+                // By Async
+                WebRequestAsync asyncCaller = new WebRequestAsync(responseView);
+                asyncCaller.execute(new String[]{editTextWebsite.getText().toString()});
+
+                // By Retrofit
+
+
+
+            }
+        });
     }
 
     @Override
