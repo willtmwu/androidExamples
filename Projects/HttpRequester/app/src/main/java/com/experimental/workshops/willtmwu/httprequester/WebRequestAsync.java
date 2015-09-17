@@ -3,6 +3,7 @@ package com.experimental.workshops.willtmwu.httprequester;
 import android.os.AsyncTask;
 import android.os.Debug;
 import android.util.Log;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -21,6 +22,7 @@ public class WebRequestAsync extends AsyncTask<String, Void, String>{
     private static final String LOG_TAG = WebRequestAsync.class.getSimpleName();
 
     private TextView responseView;
+    private WebView webResponseView;
 
 
     /* NOTES
@@ -32,7 +34,11 @@ public class WebRequestAsync extends AsyncTask<String, Void, String>{
      */
 
     public WebRequestAsync (TextView tv) {
+        this(tv, null);
+    }
+    public WebRequestAsync (TextView tv, WebView wb) {
         this.responseView = tv;
+        this.webResponseView = wb;
     }
 
     // Get the website, in all the html glory
@@ -90,6 +96,9 @@ public class WebRequestAsync extends AsyncTask<String, Void, String>{
     protected void onPostExecute(String s) {
         //super.onPostExecute(s);
         responseView.setText(s);
+        if (webResponseView != null) {
+            webResponseView.loadData(s, "text/html" , "utf-8");
+        }
     }
 
 
